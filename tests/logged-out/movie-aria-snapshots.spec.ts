@@ -1,0 +1,105 @@
+import { test, expect } from '@playwright/test';
+
+test('movie page snapshot', async ({ page }) => {
+  await page.goto('movie?id=1022789&page=1');
+  await expect.soft(page.getByRole('main')).toMatchAriaSnapshot(`
+    - heading "Inside Out 2" [level=1]
+    - heading "Make room for new emotions." [level=2]
+    - text: ★ ★ ★ ★ ★ ★
+    - paragraph: /\\d+\\.\\d+/
+    - text: English / 97 min. / 2024
+    - heading "The Genres" [level=3]
+    - list:
+      - listitem:
+        - link "Animation":
+          - img
+      - listitem:
+        - link "Adventure":
+          - img
+      - listitem:
+        - link "Comedy":
+          - img
+      - listitem:
+        - link "Family":
+          - img
+    - heading "The Synopsis" [level=3]
+    - paragraph: "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone."
+    - heading "The Cast" [level=3]
+    - button "«"
+    - link "Amy Poehler":
+      - img "Amy Poehler"
+    - link "Maya Hawke":
+      - img "Maya Hawke"
+    - link "Kensington Tallman":
+      - img "Kensington Tallman"
+    - link "Liza Lapira":
+      - img "Liza Lapira"
+    - link "Tony Hale":
+      - img "Tony Hale"
+    - link "Lewis Black":
+      - img "Lewis Black"
+    - link "Phyllis Smith":
+      - img "Phyllis Smith"
+    - link "Ayo Edebiri":
+      - img "Ayo Edebiri"
+    - link "Lilimar":
+      - img "Lilimar"
+    - link "Grace Lu":
+      - img "Grace Lu"
+    - link "Sumayyah Nuriddin-Green":
+      - img "Sumayyah Nuriddin-Green"
+    - link "Adèle Exarchopoulos":
+      - img "Adèle Exarchopoulos"
+    - link "Diane Lane":
+      - img "Diane Lane"
+    - link "Kyle MacLachlan":
+      - img "Kyle MacLachlan"
+    - link "Paul Walter Hauser":
+      - img "Paul Walter Hauser"
+    - link "Yvette Nicole Brown":
+      - img "Yvette Nicole Brown"
+    - link "Ron Funches":
+      - img "Ron Funches"
+    - link "James Austin Johnson":
+      - img "James Austin Johnson"
+    - link "Yong Yea":
+      - img "Yong Yea"
+    - link "Steve Purcell":
+      - img "Steve Purcell"
+    - link "Dave Goelz":
+      - img "Dave Goelz"
+    - link "Kirk R. Thatcher":
+      - img "Kirk R. Thatcher"
+    - link "Frank Oz":
+      - img "Frank Oz"
+    - link "Paula Pell":
+      - img "Paula Pell"
+    - link "June Squibb":
+      - img "June Squibb"
+    - link "Pete Docter":
+      - img "Pete Docter"
+    - link "Paula Poundstone":
+      - img "Paula Poundstone"
+    - link "John Ratzenberger":
+      - img "John Ratzenberger"
+    - link "Sarayu Blue":
+      - img "Sarayu Blue"
+    - link "Flea":
+      - img "Flea"
+    - link "Bobby Moynihan":
+      - img "Bobby Moynihan"
+    - link "Kendall Coyne Schofield":
+      - img "Kendall Coyne Schofield"
+    - button "»"
+    - link "Website":
+      - button "Website":
+        - img
+    - link "IMDB":
+      - button "IMDB":
+        - img
+    - button "Trailer":
+      - img
+    - button "Back":
+      - img
+    `);
+});
